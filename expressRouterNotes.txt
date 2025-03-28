@@ -1,0 +1,10 @@
+We have a lots of endpoints in a single file server.js this makes bad experience in code readablity as well as code handling.
+
+Express router is a way to modularzie and organize your route handling code in an express.js application.
+
+So let's create a seperate file to manage endpoints like /person and /menu.
+
+Express Router is like a traffic cop for your web server.
+
+Express Router helps you organize and manage these pages or endpoints in your web application . It's like creating seperate folders for different types of tasks.
+
