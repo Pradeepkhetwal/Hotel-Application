@@ -1,9 +1,16 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
+
+
+dotenv.config();
 
 //  This is a MongoDB connection URL that specifies the location of the MongoDB server and the database you want to connect to.
 // Here we are using mongodb database which we have installed locally so as we know mongodb runs on 27017 port number by default and here /hotels is the name of database that will be created if not persent in the mongodb database.
 //And don't forget to run mongodb atlas application to run mongodb server . You need to click on connect inside the mongodb atlas application (sabse phele karna hai ye).
-const mongoURL = "mongodb://localhost:27017/hotels"
+// const mongoURL = "mongodb://localhost:27017/hotels"
+
+// We are switching to altas for better convinience .
+const mongoURI = process.env.MONGO_DB_URI;
 
 
 /* mongoose.connect(): This method is used to establish a connection to the MongoDB server.
@@ -17,7 +24,7 @@ useNewUrlParser: true: Tells Mongoose to use the new MongoDB connection string p
 useUnifiedTopology: true:*/
 
 // mongoose.connect() returns a promise, and if the connection is successful, it will resolve, otherwise, it will reject with an error.
-mongoose.connect(mongoURL, {
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology:true
 })
